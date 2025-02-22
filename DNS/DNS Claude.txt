@@ -1,0 +1,20 @@
+Initial Query: When you type "www.example.com" in your browser, your computer first sends this query to your Local DNS Resolver. This is usually provided by your ISP or could be a custom resolver like Google's 8.8.8.8.
+Root DNS Query: If the resolver doesn't have the answer cached, it starts at the top of the DNS hierarchy by querying a Root DNS Server. This is like asking for directions at the highest level.
+Root DNS Response: The root server doesn't know the specific IP address, but it knows where to find information about ".com" domains. It responds with a referral to the Top-Level Domain (TLD) servers that handle .com domains.
+TLD Query: The resolver then asks the .com TLD server about "example.com". This is like narrowing down the search to the specific domain category.
+TLD Response: The .com TLD server responds with information about which authoritative nameservers are responsible for "example.com". These servers are the final authority for this domain.
+Authoritative Query: The resolver contacts the authoritative nameserver for example.com and asks for the specific record for "www.example.com".
+Final Response: The authoritative server responds with the actual IP address (in this example, 93.184.216.34).
+Client Response: The resolver sends this IP address back to your browser and typically caches it for future use to speed up subsequent requests.
+Connection: Finally, your browser can establish a connection with the web server using the IP address.
+
+Some important details shown in the diagram:
+
+Each step includes notes explaining the purpose of that interaction
+The diagram shows the hierarchical nature of DNS resolution
+The caching aspect is highlighted in the resolver's final response
+The actual IP addresses and server references are included for realism
+
+https://saurabhrohankar99.medium.com/what-every-it-engineer-must-know-about-dns-domain-name-system-f1fa6210ec68
+
+https://www.cloudns.net/blog/authoritative-dns-server/
